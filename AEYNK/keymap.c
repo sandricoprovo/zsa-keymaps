@@ -10,7 +10,7 @@ uint16_t gui_tab_timer = 0;
 
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
-  GUI_TAB = ZSA_SAFE_RANGE,
+  GUI_TAB,
 };
 
 
