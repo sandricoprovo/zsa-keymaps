@@ -29,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_CAPS,        ST_MACRO_0,     ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,     GUI_TAB,                                 CW_TOGG,        LGUI(KC_Z),     LGUI(KC_Y),     LGUI(KC_S),     LGUI(LSFT(KC_4)),KC_MEDIA_PLAY_PAUSE,
     KC_TAB,         KC_Q,           ALL_T(KC_W),    KC_E,           LT(2, KC_R),    KC_T,                                           KC_Y,           KC_U,           KC_I,           ALL_T(KC_O),    KC_P,           KC_SLASH,
     OSL(3),         MT(MOD_LCTL, KC_A),MT(MOD_LALT, KC_S),MT(MOD_LGUI, KC_D),MT(MOD_LSFT, KC_F),LT(1, KC_G),                                    KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_RGUI, KC_K),MT(MOD_RALT, KC_L),MT(MOD_RCTL, KC_QUOTE),KC_MINUS,
-    KC_SPACE,       KC_Z,           MT(MOD_LGUI, KC_X),MT(MOD_LCTL, KC_C),KC_V,           KC_B,                                           KC_N,           KC_M,           MT(MOD_RCTL, KC_COMMA),MT(MOD_RGUI, KC_DOT),KC_QUES,        LGUI(KC_SPACE),
-                                                    KC_BSPC,        KC_ESCAPE,                                      KC_ENTER,       KC_SPACE
+    KC_SPACE,       KC_Z,           MT(MOD_LGUI, KC_X),MT(MOD_LCTL, KC_C),KC_V,           KC_B,                                           KC_N,           KC_M,           MT(MOD_RCTL, KC_COMMA),MT(MOD_RGUI, KC_DOT),KC_QUES,        KC_ENTER,       
+                                                    KC_BSPC,        KC_ESCAPE,                                      LGUI(KC_SPACE), KC_SPACE
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
