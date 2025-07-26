@@ -20,9 +20,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_CAPS,        ST_MACRO_0,     ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,     KC_TRANSPARENT,                                 CW_TOGG,        LGUI(KC_Z),     LGUI(KC_Y),     LGUI(KC_S),     LGUI(LSFT(KC_4)),KC_MEDIA_PLAY_PAUSE,
     KC_TAB,         KC_Q,           ALL_T(KC_W),    KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           ALL_T(KC_O),    KC_P,           KC_SLASH,       
-    KC_TRANSPARENT, MT(MOD_LCTL, KC_A),MT(MOD_LALT, KC_S),MT(MOD_LGUI, KC_D),MT(MOD_LSFT, KC_F),KC_G,                                           KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_RGUI, KC_K),MT(MOD_RALT, KC_L),MT(MOD_RCTL, KC_QUOTE),KC_MINUS,       
+    KC_TRANSPARENT, MT(MOD_LCTL, KC_A),MT(MOD_LALT, KC_S),MT(MOD_LGUI, KC_D),MT(MOD_LSFT, KC_F),LT(1, KC_G),                                    KC_H,           MT(MOD_RSFT, KC_J),MT(MOD_RGUI, KC_K),MT(MOD_RALT, KC_L),MT(MOD_RCTL, KC_QUOTE),KC_MINUS,       
     KC_SPACE,       KC_Z,           MT(MOD_LGUI, KC_X),MT(MOD_LCTL, KC_C),KC_V,           KC_B,                                           KC_N,           KC_M,           MT(MOD_RCTL, KC_COMMA),MT(MOD_RGUI, KC_DOT),KC_QUES,        LGUI(KC_SPACE), 
                                                     KC_BSPC,        KC_ESCAPE,                                      KC_ENTER,       KC_SPACE
+  ),
+  [1] = LAYOUT_voyager(
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_F12,         KC_F11,         KC_F10,         KC_F9,          KC_TRANSPARENT,                                 KC_COLN,        KC_7,           KC_8,           KC_9,           KC_ASTR,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_F8,          KC_F7,          KC_F6,          KC_F5,          KC_TRANSPARENT,                                 KC_DOT,         KC_1,           KC_2,           KC_3,           KC_PLUS,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_F4,          KC_F3,          KC_F2,          KC_F1,          KC_TRANSPARENT,                                 KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_MINUS,       KC_TRANSPARENT, 
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 QK_LLCK,        KC_0
   ),
 };
 
@@ -55,6 +62,8 @@ void keyboard_post_init_user(void) {
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     [0] = { {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161}, {188,194,161} },
 
+    [1] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,237,200}, {0,237,200}, {0,237,200}, {0,237,200}, {0,0,0}, {0,0,0}, {0,237,200}, {0,237,200}, {0,237,200}, {0,237,200}, {0,0,0}, {0,0,0}, {0,237,200}, {0,237,200}, {0,237,200}, {0,237,200}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {16,255,255}, {152,255,255}, {152,255,255}, {152,255,255}, {16,255,255}, {0,0,0}, {16,255,255}, {152,255,255}, {152,255,255}, {152,255,255}, {16,255,255}, {0,0,0}, {16,255,255}, {152,255,255}, {152,255,255}, {152,255,255}, {16,255,255}, {0,0,0}, {36,255,255}, {152,255,255} },
+
 };
 
 void set_layer_color(int layer) {
@@ -82,6 +91,9 @@ bool rgb_matrix_indicators_user(void) {
   switch (biton32(layer_state)) {
     case 0:
       set_layer_color(0);
+      break;
+    case 1:
+      set_layer_color(1);
       break;
    default:
     if (rgb_matrix_get_flags() == LED_FLAG_NONE)
