@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_F12,         KC_F11,         KC_F10,         KC_F9,          KC_TRANSPARENT,                                 KC_COLN,        KC_7,           KC_8,           KC_9,           KC_ASTR,        KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_F12,         KC_F11,         KC_F10,         LT(2, KC_F9),   KC_TRANSPARENT,                                 KC_COLN,        KC_7,           KC_8,           KC_9,           KC_ASTR,        KC_TRANSPARENT, 
     KC_TRANSPARENT, MT(MOD_LCTL, KC_F8),MT(MOD_LALT, KC_F7),MT(MOD_LGUI, KC_F6),MT(MOD_LSFT, KC_F5),KC_TRANSPARENT,                                 KC_DOT,         KC_1,           KC_2,           KC_3,           KC_PLUS,        KC_TRANSPARENT, 
     KC_TRANSPARENT, KC_F4,          KC_F3,          KC_F2,          KC_F1,          KC_TRANSPARENT,                                 KC_SLASH,       KC_4,           KC_5,           KC_6,           KC_MINUS,       KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 QK_LLCK,        KC_0
@@ -62,9 +62,15 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case LT(2, KC_R):
+            return TAPPING_TERM -30;
         case MT(MOD_LSFT, KC_F):
             return TAPPING_TERM -30;
+        case LT(1, KC_G):
+            return TAPPING_TERM -30;
         case MT(MOD_RSFT, KC_J):
+            return TAPPING_TERM -30;
+        case LT(2, KC_F9):
             return TAPPING_TERM -30;
         default:
             return TAPPING_TERM;
