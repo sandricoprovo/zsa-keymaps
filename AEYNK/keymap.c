@@ -276,21 +276,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       return false;
-    case DUAL_FUNC_4:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
-          register_code16(LCTL(LSFT(KC_MINUS)));
-        } else {
-          unregister_code16(LCTL(LSFT(KC_MINUS)));
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(KC_LEFT_CTRL);
-        } else {
-          unregister_code16(KC_LEFT_CTRL);
-        }
-      }
-      return false;
     case RGB_SLD:
       if (record->event.pressed) {
         rgblight_mode(1);
