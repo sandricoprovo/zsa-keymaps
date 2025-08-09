@@ -24,22 +24,22 @@ enum tap_dance_codes {
   DANCE_0,
 };
 
-#define DUAL_FUNC_0 LT(13, KC_F24)
-#define DUAL_FUNC_1 LT(2, KC_F17)
-#define DUAL_FUNC_2 LT(4, KC_7)
-#define DUAL_FUNC_3 LT(10, KC_D)
-#define DUAL_FUNC_4 LT(10, KC_F21)
-#define DUAL_FUNC_5 LT(2, KC_F4)
-#define DUAL_FUNC_6 LT(2, KC_B)
-#define DUAL_FUNC_7 LT(11, KC_F23)
-#define DUAL_FUNC_8 LT(1, KC_4)
+#define DUAL_FUNC_0 LT(15, KC_F8)
+#define DUAL_FUNC_1 LT(4, KC_3)
+#define DUAL_FUNC_2 LT(1, KC_D)
+#define DUAL_FUNC_3 LT(15, KC_6)
+#define DUAL_FUNC_4 LT(5, KC_S)
+#define DUAL_FUNC_5 LT(2, KC_8)
+#define DUAL_FUNC_6 LT(13, KC_O)
+#define DUAL_FUNC_7 LT(9, KC_F11)
+#define DUAL_FUNC_8 LT(13, KC_E)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_CAPS,        LGUI(KC_A),     LGUI(KC_V),     LGUI(KC_C),     KC_MS_BTN1,     GUI_TAB,                                          CW_TOGG,        LGUI(KC_Z),     LGUI(KC_Y),     LGUI(KC_S),     LGUI(KC_GRAVE), LGUI(LSFT(KC_4)),
     KC_TAB,         KC_Q,           KC_W,           KC_E,           ALL_T(KC_R),    KC_T,                                           KC_Y,           ALL_T(KC_U),    KC_I,           KC_O,           KC_P,           KC_SLASH,
-    OSL(4),         KC_A,           LT(2, KC_S),    LT(3, KC_D),    MT(MOD_LSFT, KC_F),LT(1, KC_G),                                    LT(1, KC_H),    MT(MOD_RSFT, KC_J),LT(3, KC_K),    LT(2, KC_L),    KC_QUOTE,       KC_MINUS,
-    TT(5),          MT(MOD_LCTL, KC_Z),MT(MOD_LALT, KC_X),MT(MOD_LGUI, KC_C),KC_V,           KC_B,                                           KC_N,           KC_M,           MT(MOD_RGUI, KC_COMMA),MT(MOD_RALT, KC_DOT),DUAL_FUNC_0,    KC_ENTER,
+    OSL(4),         KC_A,           LT(2, KC_S),    LT(3, KC_D),    MT(MOD_LSFT, KC_F),KC_G,                                           KC_H,           MT(MOD_RSFT, KC_J),LT(3, KC_K),    LT(2, KC_L),    KC_QUOTE,       KC_MINUS,       
+    TT(5),          KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           LT(6, KC_M),    KC_COMMA,       KC_DOT,         KC_QUES,        KC_ENTER,       
                                                     KC_BSPC,        KC_ESCAPE,                                      LGUI(KC_SPACE), KC_SPACE
   ),
   [1] = LAYOUT_voyager(
@@ -52,8 +52,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [2] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_GRAVE,       KC_LABK,        KC_RABK,        KC_MINUS,       KC_UNDS,                                        KC_PIPE,        KC_LCBR,        KC_RCBR,        KC_DLR,         KC_DQUO,        KC_BSLS,
-    KC_TRANSPARENT, KC_COLN,        KC_PLUS,        KC_EXLM,        MT(MOD_LSFT, KC_EQUAL),KC_AMPR,                                        KC_AT,          DUAL_FUNC_3,    KC_RPRN,        KC_SCLN,        KC_QUOTE,       KC_CIRC,
-    KC_TRANSPARENT, DUAL_FUNC_1,    DUAL_FUNC_2,    MT(MOD_LGUI, KC_LBRC),KC_RBRC,        KC_PERC,                                        KC_HASH,        KC_SLASH,       MT(MOD_RGUI, KC_COMMA),MT(MOD_RALT, KC_DOT),DUAL_FUNC_0,    KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_COLN,        KC_PLUS,        KC_EXLM,        MT(MOD_LSFT, KC_EQUAL),KC_AMPR,                                        KC_AT,          DUAL_FUNC_2,    KC_RPRN,        KC_SCLN,        KC_QUOTE,       KC_CIRC,        
+    KC_TRANSPARENT, DUAL_FUNC_0,    DUAL_FUNC_1,    MT(MOD_LGUI, KC_LBRC),KC_RBRC,        KC_PERC,                                        KC_HASH,        KC_SLASH,       MT(MOD_RGUI, KC_COMMA),MT(MOD_RALT, KC_DOT),DUAL_FUNC_3,    KC_TRANSPARENT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 QK_LLCK,        KC_TRANSPARENT
   ),
   [3] = LAYOUT_voyager(
@@ -77,6 +77,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, LGUI(KC_KP_0),  LGUI(KC_KP_MINUS),LGUI(KC_KP_PLUS),KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
+  [6] = LAYOUT_voyager(
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, OSM(MOD_LCTL),  OSM(MOD_LALT),  OSM(MOD_LGUI),  OSM(MOD_LSFT),  KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+                                                    KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
+  ),
 };
 
 const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT(
@@ -97,13 +104,17 @@ combo_t key_combos[COMBO_COUNT] = {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        case LT(3, KC_D):
+            return TAPPING_TERM -30;
         case MT(MOD_LSFT, KC_F):
             return TAPPING_TERM -30;
         case KC_V:
             return TAPPING_TERM -30;
         case MT(MOD_RSFT, KC_J):
             return TAPPING_TERM -30;
-        case KC_M:
+        case LT(3, KC_K):
+            return TAPPING_TERM -30;
+        case LT(6, KC_M):
             return TAPPING_TERM -30;
         case KC_F9:
             return TAPPING_TERM -30;
@@ -225,21 +236,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case DUAL_FUNC_0:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
-          register_code16(KC_QUES);
-        } else {
-          unregister_code16(KC_QUES);
-        }
-      } else {
-        if (record->event.pressed) {
-          register_code16(KC_RIGHT_CTRL);
-        } else {
-          unregister_code16(KC_RIGHT_CTRL);
-        }
-      }
-      return false;
-    case DUAL_FUNC_1:
-      if (record->tap.count > 0) {
-        if (record->event.pressed) {
           register_code16(KC_TILD);
         } else {
           unregister_code16(KC_TILD);
@@ -252,7 +248,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       return false;
-    case DUAL_FUNC_2:
+    case DUAL_FUNC_1:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_ASTR);
@@ -267,7 +263,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
       }
       return false;
-    case DUAL_FUNC_3:
+    case DUAL_FUNC_2:
       if (record->tap.count > 0) {
         if (record->event.pressed) {
           register_code16(KC_LPRN);
@@ -281,6 +277,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           unregister_code16(KC_RIGHT_SHIFT);
         }
       }
+      return false;
+    case DUAL_FUNC_3:
+      if (record->tap.count > 0) {
+        if (record->event.pressed) {
+          register_code16(KC_QUES);
+        } else {
+          unregister_code16(KC_QUES);
+        }
+      } else {
+        if (record->event.pressed) {
+          register_code16(KC_RIGHT_CTRL);
+        } else {
+          unregister_code16(KC_RIGHT_CTRL);
+        }  
+      }  
       return false;
     case DUAL_FUNC_4:
       if (record->tap.count > 0) {
