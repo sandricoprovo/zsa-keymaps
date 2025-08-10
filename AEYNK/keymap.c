@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     OSL(4),         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_MINUS,
     OSM(MOD_LSFT),  KC_A,           LT(2, KC_S),    LT(3, KC_D),    LT(1, KC_F),    KC_G,                                           KC_H,           LT(1, KC_J),    LT(3, KC_K),    LT(2, KC_L),    KC_QUOTE,       OSM(MOD_RSFT),
     OSM(MOD_LGUI),  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           LT(5, KC_M),    KC_COMMA,       KC_DOT,         KC_QUES,        OSM(MOD_RGUI),
-                                                    KC_BSPC,        KC_NO,                                          KC_ENTER,       KC_SPACE
+                                                    KC_BSPC,        QK_REP,                                          KC_ENTER,       KC_SPACE
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -239,7 +239,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-// Custom QMK here
+// === CUSTOM IMPLEMENTATIONS === //
 void matrix_scan_user(void) {// The very important timer.
   if (is_gui_tab_active) {
     if (timer_elapsed(gui_tab_timer) > 1000) {
@@ -249,10 +249,27 @@ void matrix_scan_user(void) {// The very important timer.
   }
 }
 
+// Custom Alternate Keys
+uint16_t get_alt_repeat_key_keycode_user(uint16_t keycode, uint8_t mods) {
+    if ((mods & MOD_MASK_GUI)) {
+        switch (keycode) {
+            case KC_Y: return C(KC_Z);  // Ctrl + Y reverses to Ctrl + Z.
+            case KC_Z: return C(KC_Y);  // Ctrl + Z reverses to Ctrl + Y.
+        }
+    }
+
+    return KC_TRNS;  // Defer to default definitions.
+}
+
+// Custom Key Overrides
 const key_override_t delete_key_override =
     ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
 
+const key_override_t alternate_repeat_key =
+    ko_make_basic(MOD_MASK_SHIFT, QK_REP, QK_AREP);
+
 const key_override_t *key_overrides[] = {
     &delete_key_override,
+    &alternate_repeat_key,
     NULL
 };
