@@ -15,13 +15,13 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(7, KC_F7)
+#define DUAL_FUNC_0 LT(12, KC_M)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_CAPS,        LCTL(KC_LEFT),  LCTL(KC_RIGHT), KC_TAB,         KC_ESCAPE,      KC_NO,                                          CW_TOGG,        ST_MACRO_0,     ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,     LGUI(LSFT(KC_4)),
-    OSL(4),         KC_Q,           KC_W,           KC_E,           LT(1, KC_R),    KC_T,                                           KC_Y,           LT(1, KC_U),    KC_I,           KC_O,           KC_P,           KC_MINUS,       
-    OSM(MOD_LSFT),  KC_A,           LT(2, KC_S),    LT(3, KC_D),    LT(5, KC_F),    KC_G,                                           KC_H,           LT(5, KC_J),    LT(3, KC_K),    LT(2, KC_L),    KC_QUOTE,       OSM(MOD_RSFT),  
+    OSL(4),         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_MINUS,       
+    OSM(MOD_LSFT),  KC_A,           LT(2, KC_S),    LT(3, KC_D),    LT(5, KC_F),    LT(1, KC_G),                                    LT(1, KC_H),    LT(5, KC_J),    LT(3, KC_K),    LT(2, KC_L),    KC_QUOTE,       OSM(MOD_RSFT),  
     OSM(MOD_LGUI),  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        OSM(MOD_RGUI),  
                                                     KC_BSPC,        KC_NO,                                          KC_ENTER,       KC_SPACE
   ),
@@ -80,7 +80,7 @@ combo_t key_combos[COMBO_COUNT] = {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(1, KC_R):
+        case KC_R:
             return TAPPING_TERM -30;
         case LT(2, KC_S):
             return TAPPING_TERM -30;
@@ -88,9 +88,13 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM -30;
         case LT(5, KC_F):
             return TAPPING_TERM -30;
+        case LT(1, KC_G):
+            return TAPPING_TERM -30;
         case KC_V:
             return TAPPING_TERM -30;
-        case LT(1, KC_U):
+        case KC_U:
+            return TAPPING_TERM -30;
+        case LT(1, KC_H):
             return TAPPING_TERM -30;
         case LT(5, KC_J):
             return TAPPING_TERM -30;
