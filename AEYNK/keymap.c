@@ -19,15 +19,15 @@ enum custom_keycodes {
 
 
 
-#define DUAL_FUNC_0 LT(6, KC_P)
+#define DUAL_FUNC_0 LT(13, KC_N)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
-    KC_CAPS,        LCTL(KC_LEFT),  LCTL(KC_RIGHT), KC_TAB,         KC_ESCAPE,      GUI_TAB,                                          CW_TOGG,        ST_MACRO_0,     ST_MACRO_1,     ST_MACRO_2,     ST_MACRO_3,     LGUI(LSFT(KC_4)),
-    OSL(4),         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_MINUS,
-    OSM(MOD_LSFT),  KC_A,           LT(2, KC_S),    LT(3, KC_D),    LT(5, KC_F),    LT(1, KC_G),                                    LT(1, KC_H),    LT(5, KC_J),    LT(3, KC_K),    LT(2, KC_L),    KC_QUOTE,       OSM(MOD_RSFT),
-    OSM(MOD_LGUI),  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        OSM(MOD_RGUI),
-                                                    KC_BSPC,        QK_REP,                                          KC_ENTER,       KC_SPACE
+    KC_GRAVE,       LCTL(KC_LEFT),  LCTL(KC_RIGHT), KC_ESCAPE,      KC_TAB,         GUI_TAB,                                          CW_TOGG,        ST_MACRO_0,     ST_MACRO_1,     ST_MACRO_2,     LGUI(LSFT(KC_4)),LGUI(KC_GRAVE),
+    KC_CAPS,        KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_MINUS,
+    OSL(4),         KC_A,           LT(2, KC_S),    LT(3, KC_D),    LT(5, KC_F),    LT(1, KC_G),                                    LT(1, KC_H),    LT(5, KC_J),    LT(3, KC_K),    LT(2, KC_L),    KC_QUOTE,       KC_UNDS,
+    QK_REP,          KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_QUES,        KC_ENTER,
+                                                    KC_BSPC,        OSM(MOD_LGUI),                                  OSM(MOD_LSFT),  KC_SPACE
   ),
   [1] = LAYOUT_voyager(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
